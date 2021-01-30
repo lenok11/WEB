@@ -3,6 +3,16 @@
 <head>
   <title>WEB1 - Welcome</title>
   <meta charset="utf-8">
+  <style>
+		div {
+			width: 180px;
+			height: 280px;
+			margin: 10px;
+			padding: 10px;
+			border: solid 15px #8B4513;
+			float: left;
+		}
+	</style>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
@@ -14,5 +24,33 @@
   <h2>WEB</h2>
   <p>The World Wide Web (abbreviated WWW or the Web) is an information space where documents and other web resources are identified by Uniform Resource Locators (URLs), interlinked by hypertext links, and can be accessed via the Internet.[1] English scientist Tim Berners-Lee invented the World Wide Web in 1989. He wrote the first web browser computer program in 1990 while employed at CERN in Switzerland.[2][3] The Web browser was released outside of CERN in 1991, first to other research institutions starting in January 1991 and to the general public on the Internet in August 1991.
   </p>
+  
+	<h1>드래그 앤 드롭을 이용한 객체의 이동</h1>
+
+	<p>모나리자 그림을 드래그해서 옆의 사각형으로 옮겨보세요!</p>
+
+	<div ondrop="drop(event)" ondragover="dragEnter(event)">
+		<img id="monalisa" width="180" height="280" src="/examples/images/img_monalisa.png" draggable="true" ondragstart="drag(event)">
+	</div>
+	<div ondrop="drop(event)" ondragover="dragEnter(event)"></div>
+
+	<script>
+		function dragEnter(ev) {
+			ev.preventDefault();
+		}
+
+		function drag(ev) {
+			ev.dataTransfer.setData("text", ev.target.id);
+		}
+
+		function drop(ev) {
+			ev.preventDefault();
+			var data = ev.dataTransfer.getData("text");
+			ev.target.appendChild(document.getElementById(data));
+		}
+	</script>
+
 </body>
 </html>
+
+
