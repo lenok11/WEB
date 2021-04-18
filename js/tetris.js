@@ -181,6 +181,6 @@ document.addEventListener("keydown", e=>{
 
 restartButton.addEventListener("click", ()=>{
     playground.innerHTML = "";
-    gameText.style.dusplay = "none";
+    gameText.style.display = "none";
     init();
 }) 
