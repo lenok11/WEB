@@ -50,11 +50,12 @@ a {
   display: none;
   position: absolute;
   right: 32px;
-  font-size: var(--font-size);
+  top: 15px;
+  font-size: calc(var(--font-size)*1.5);
   color: #d49466;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:850px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
