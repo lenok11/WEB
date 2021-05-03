@@ -21,6 +21,10 @@ a {
 .navbar_logo {
   font-size: calc(var(--font-size)*2);
   color: var(--font-color);
+  transition: transform 300ms ease;
+}
+.navbar_logo:hover {
+  transform: scale(1.05);
 }
 .navbar_logo i {
   color: #d49466;
@@ -53,6 +57,7 @@ a {
   top: 15px;
   font-size: calc(var(--font-size)*1.5);
   color: #d49466;
+  transition: transform 300ms ease;
 }
 
 @media screen and (max-width:850px) {
@@ -78,6 +83,9 @@ a {
   }
   .navbar_toggleBtn {
     display: block;
+  }
+  .navbar_toggleBtn:hover {
+    transform: scale(1.1);
   }
   .navbar_menu.active,
   .navbar_icons.active {
