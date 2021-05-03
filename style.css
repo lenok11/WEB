@@ -1,110 +1,85 @@
-* {
-  margin: 0;
-  padding: 0;
-}
 :root {
-  --facebook: #3b5998;
+  --font-size: 25px;
+  --font-color: black;
 }
-.wrap-all {
+body {
+  margin: 0px;
+  font-family: Nanum Pen Script;
+  font-size: var(--font-size);
+}
+a {
+  text-decoration: none;
+  color: var(--font-color);
+}
+.navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: column;
+  border-bottom: 1px solid black;
+  padding: 8px 12px;  
 }
-.play-time {
-  font-size: 3rem;
-  margin-top: 2rem;
-  color: var(--facebook);
+.navbar_logo {
+  font-size: calc(var(--font-size)*2);
+  color: var(--font-color);
 }
-ul {
-  margin-top: 1rem;
+.navbar_logo i {
+  color: #d49466;
+}
+.navbar_menu {
+  display: flex;
   list-style: none;
-  border: 2px solid var(--facebook);
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  padding-left: 0;
 }
-li {
-  width: 100px;
-  height: 100px;
-  color: #ffff;
-  border: 1px solid red;
-  background: url("placeimg_400_400_people.jpg");
+.navbar_menu li {
+  padding: 20px 20px;
 }
-.start-button {
-  background-color: var(--facebook);
-  color: #fff;
-  border: none;
-  padding: 1rem 2rem;
-  margin-top: 1rem;
+.navbar_menu li:hover{
+  background-color: #d49466;
+  border-radius: 4px;
 }
-.game-text {
-  position: absolute;
-  font-size: 45px;
-  color: #67c23a;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+.navbar_icons {
+  list-style: none;
+  color: var(--font-color);
+  display: flex;
+  padding-left: 0px;
+}
+.navbar_icons>li {
+  padding: 8px 12px;
+}
+.navbar_toggleBtn {
   display: none;
+  position: absolute;
+  right: 32px;
+  font-size: var(--font-size);
+  color: #d49466;
 }
-.list0 {
-  background-position-x: 0px;
-  background-position-y: 0px;
-}
-.list1 {
-  background-position-x: -100px;
-  background-position-y: 0px;
-}
-.list2 {
-  background-position-x: -200px;
-  background-position-y: 0px;
-}
-.list3 {
-  background-position-x: -300px;
-  background-position-y: 0px;
-}
-.list4 {
-  background-position-x: 0px;
-  background-position-y: -100px;
-}
-.list5 {
-  background-position-x: -100px;
-  background-position-y: -100px;
-}
-.list6 {
-  background-position-x: -200px;
-  background-position-y: -100px;
-}
-.list7 {
-  background-position-x: -300px;
-  background-position-y: -100px;
-}
-.list8 {
-  background-position-x: 0px;
-  background-position-y: -200px;
-}
-.list9 {
-  background-position-x: -100px;
-  background-position-y: -200px;
-}
-.list10 {
-  background-position-x: -200px;
-  background-position-y: -200px;
-}
-.list11 {
-  background-position-x: -300px;
-  background-position-y: -200px;
-}
-.list12 {
-  background-position-x: 0px;
-  background-position-y: -300px;
-}
-.list13 {
-  background-position-x: -100px;
-  background-position-y: -300px;
-}
-.list14 {
-  background-position-x: -200px;
-  background-position-y: -300px;
-}
-.list15 {
-  background-position-x: -300px;
-  background-position-y: -300px;
+
+@media screen and (max-width:768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+  .navbar_menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .navbar_menu li {
+    width: 100%;
+    text-align: center;
+  }
+  .navbar_icons {
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+  .navbar_toggleBtn {
+    display: block;
+  }
+  .navbar_menu.active,
+  .navbar_icons.active {
+    display: flex;
+  }
 }
